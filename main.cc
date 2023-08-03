@@ -1,9 +1,9 @@
 #include <iostream>
 #include <fstream>
 #include <regex>
+#include <string>
 #include "json.hh"
 
-#define cpp __cplusplus
 
 using json = nlohmann::json;
 
@@ -55,6 +55,7 @@ int print_elements(){
 
 
 int main(){
+  print_table();
   print_elements();
   return 0;
 }
