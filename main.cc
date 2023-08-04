@@ -1,6 +1,5 @@
 #include <iostream>
 #include <fstream>
-#include <regex>
 #include <string>
 #include "json.hh"
 
@@ -42,12 +41,14 @@ int print_elements(){
   title(a);
   for (auto& each:data["elements"]){
     if (static_cast<std::string>(each["name"]) == a){
-      if(!each["name"].is_null()){
-        std::cout<<static_cast<std::string>(each["summary"])<<"\n\n";
+      std::cout<<(std::string)(each["summary"])<<"\n";
+      if(each["appearance"].is_null()){
+        std::cout<<"Appearance: "<<"No info given\n";
       }
-      if(!each["summary"].is_null()){
-        std::cout<<static_cast<std::string>(each["appearance"])<<"\n\n";
+      else{
+        std::cout<<"Appearance: "<<(std::string)(each["appearance"])<<"\n";
       }
+      std::cout<<"For more information: "<<(std::string)(each["source"])<<"\n";
     }
   }
   return 0;
@@ -55,6 +56,7 @@ int print_elements(){
 
 
 int main(){
+  std::cout<<"Welcome to the periodic table\n";
   print_table();
   print_elements();
   return 0;
