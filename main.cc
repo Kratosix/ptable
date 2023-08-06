@@ -50,9 +50,6 @@ int print_elements(){
       }
       std::cout<<"For more information: "<<(std::string)(each["source"])<<"\n";
     }
-    else{
-     std::cout<<"No such element as "<<a<<"\n";
-    }
   }
   return 0;
 }
