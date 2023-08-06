@@ -43,7 +43,7 @@ int print_elements(){
     if (static_cast<std::string>(each["name"]) == a){
       std::cout<<(std::string)(each["summary"])<<"\n";
       if(each["appearance"].is_null()){
-        std::cout<<"Appearance: "<<"No info given\n";
+        std::cout<<"Appearance: "<<each["appearance"]<<"No info given\n";
       }
       else{
         std::cout<<"Appearance: "<<(std::string)(each["appearance"])<<"\n";
